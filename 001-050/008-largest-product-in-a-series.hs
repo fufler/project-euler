@@ -1,12 +1,14 @@
+get_digits :: Integer -> [Int] -> [Int]
 get_digits n acc
     | n == 0    = acc
-    | otherwise = get_digits (n `div` 10) ((n `rem` 10):acc)
+    | otherwise = get_digits (n `div` 10) ((fromIntegral $ n `rem` 10):acc)
 
+get_products :: Int -> [Int] -> [Integer] -> [Integer]
 get_products n l acc
-    | length l >= n = get_products n (tail l) ((product [l!!i | i <- [0..n-1]]):acc)
+    | length l >= n = get_products n (tail l) ((fromIntegral $ product [l!!i | i <- [0..n-1]]):acc)
     | otherwise      = acc
 
-
+solve :: Integer -> Integer
 solve n = maximum (get_products 13 (get_digits n []) [])
 
 

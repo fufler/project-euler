@@ -1,3 +1,4 @@
+solve :: Int -> Int -> Int -> Int
 solve n divider max_prime
     | divider >= n         = max max_prime divider
     | n `rem` divider == 0 = solve (n `div` divider) divider $ max max_prime divider
