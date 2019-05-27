@@ -1,7 +1,9 @@
-solve :: Int -> Int -> Int -> Int
-solve a b s
-  | b >= 4000000    = s
-  | b `rem` 2 == 0  = solve b (a + b) (s + b)
-  | otherwise       = solve b (a + b) s
+fibs :: [Int]
+fibs = r
+    where
+        r = map f [0..]
+        f 0 = 0
+        f 1 = 1
+        f n = r!!(n-1) + r!!(n-2)
 
-main = print $ solve 0 1 0
+main = print . sum . (filter even) . (takeWhile (\n -> n < 4000000)) $ fibs

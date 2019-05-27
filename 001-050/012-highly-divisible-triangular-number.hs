@@ -7,7 +7,7 @@ solve n
     | divs > 500 = n * (n + 1) `div` 2
     | otherwise  = solve (n + 1)
     where 
-        (e, o) = if n `rem` 2 == 0 then (n, n + 1) else (n + 1, n)
+        (e, o) = if even n then (n, n + 1) else (n + 1, n)
         divs = (number_of_divisors o) * (number_of_divisors (e `div` 2))  - 1
 
 main = do

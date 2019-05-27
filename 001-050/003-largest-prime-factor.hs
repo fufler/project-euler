@@ -1,7 +1,9 @@
-solve :: Int -> Int -> Int -> Int
-solve n divider max_prime
-    | divider >= n         = max max_prime divider
-    | n `rem` divider == 0 = solve (n `div` divider) divider $ max max_prime divider
-    | otherwise            = solve n (divider + 1) max_prime
+solve :: Int -> Int
+solve n = _solve n 2
+    where
+        _solve n d
+            | d == n         = d
+            | n `rem` d == 0 = _solve (n `div` d) d
+            | otherwise      = _solve n (d + 1)
 
-main = print $ solve 600851475143 2 0
+main = print $ solve 600851475143
