@@ -5,4 +5,4 @@ All solutions are written in **Haskell**. Why? Because ~~I can~~ finally I've fo
 
 Provided solutions are definetely not the best ones possible. They just work, nothing more.
 
-**NOTE** If you're planning to solve these problems by yourself do not read solutions before you solve the problem.
+**NOTE** If you're planning to solve these problems by yourself do not read solution before you solve the problem.
